@@ -20,7 +20,7 @@ import Material
 import RxCocoa
 import RxSwift
 
-open class AbstractAdapter<D, V>: NSObject, UITableViewDataSource where V: AbstractViewHolder<D> {
+open class AbstractAdapter<D>: NSObject, UITableViewDataSource {
 	
 	public var dispose = DisposeBag();
 	public let dataSource = BehaviorSubject<[D]>(value: []);
@@ -54,7 +54,7 @@ open class AbstractAdapter<D, V>: NSObject, UITableViewDataSource where V: Abstr
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let key = identifierAt(index: indexPath.row);
 		let view = tableView.dequeueReusableCell(withIdentifier: key, for: indexPath);
-		if let viewHolder = view as? V {
+		if let viewHolder = view as? AbstractViewHolder<D> {
 			let item = itemAt(index: indexPath.row);
 			bind(viewHolder: viewHolder, item: item);
 		}
@@ -69,7 +69,7 @@ open class AbstractAdapter<D, V>: NSObject, UITableViewDataSource where V: Abstr
 		return "kUnknownIdentifier";
 	}
 	
-	open func bind(viewHolder: V, item: D) {
+	open func bind(viewHolder: AbstractViewHolder<D>, item: D) {
 		viewHolder.bindItemDataSource(observable: Observable.of(item));
 	}
 }
