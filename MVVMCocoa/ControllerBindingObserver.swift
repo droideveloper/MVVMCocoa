@@ -48,7 +48,7 @@ public final class ControllerBindingObserver<ControllerType, Value>: ObserverTyp
 				#if DEBUG
 					print("\(error.localizedDescription)");
 				#else
-					throw error;
+					fatalError("\(error.localizedDescription)");
 				#endif
 			case .completed:
 				break;
