@@ -13,5 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
+import Material
 
-public protocol EventType {}
+import RxSwift
+import RxCocoa
+
+open class AbstractTableViewHolder<T>: TableViewCell {
+	
+	public let dispose = DisposeBag();
+	public let itemDataSource = PublishSubject<T>();
+	
+	public func bindItemDataSource(observable: Observable<T>) {
+		observable
+			.bindTo(itemDataSource)
+			.disposed(by: dispose);
+	}
+}

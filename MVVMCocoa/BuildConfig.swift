@@ -17,9 +17,9 @@
 public final class BuildConfig {
 	
 	#if DEBUG
-		public let DEBUG = true;
+		public static let DEBUG = true;
 	#else
-		public let DEBUG = false;
+		public static let DEBUG = false;
 	#endif
 	
 }

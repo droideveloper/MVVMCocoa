@@ -16,7 +16,7 @@
 
 import RxSwift
 
-public protocol UsecaseType: class {
+public protocol UsecaseType {
 	
 	associatedtype D;
 	

@@ -40,6 +40,50 @@ extension UIView {
 		}
 	}
 	
+	public var topConstraint: NSLayoutConstraint? {
+		get {
+			for constraint in constraints {
+				if checkAttrFirst(constraint, matches: .top) || checkAttrSecond(constraint, matches: .top) {
+					return constraint;
+				}
+			}
+			return nil;
+		}
+	}
+	
+	public var bottomConstraint: NSLayoutConstraint? {
+		get {
+			for constraint in constraints {
+				if checkAttrFirst(constraint, matches: .bottom) || checkAttrSecond(constraint, matches: .bottom) {
+					return constraint;
+				}
+			}
+			return nil;
+		}
+	}
+	
+	public var leftConstraint: NSLayoutConstraint? {
+		get {
+			for constraint in constraints {
+				if checkAttrFirst(constraint, matches: .left) || checkAttrSecond(constraint, matches: .left) {
+					return constraint;
+				}
+			}
+			return nil;
+		}
+	}
+	
+	public var rightConstraint: NSLayoutConstraint? {
+		get {
+			for constraint in constraints {
+				if checkAttrFirst(constraint, matches: .right) || checkAttrSecond(constraint, matches: .right) {
+					return constraint;
+				}
+			}
+			return nil;
+		}
+	}
+	
 	public func checkAttrFirst(_ constraint: NSLayoutConstraint, matches: NSLayoutAttribute) -> Bool {
 		if let itemSelf = constraint.firstItem as? UIView {
 			return itemSelf == self && matches == constraint.firstAttribute;

@@ -25,7 +25,10 @@
 		3D7717841E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717831E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift */; };
 		3D7717871E6B7E8C008FC20A /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717861E6B7E8C008FC20A /* LogLevel.swift */; };
 		3D7717891E6B8077008FC20A /* ApplicationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717881E6B8077008FC20A /* ApplicationType.swift */; };
-		3DE47F2D1E6C23F100DEB550 /* MVVMCocoa+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F2C1E6C23F100DEB550 /* MVVMCocoa+Layout.swift */; };
+		3DCF0D871E6ECA1800A9D117 /* ControllerBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */; };
+		3DCF0D891E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */; };
+		3DCF0D8B1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */; };
+		3DCF0D8D1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D8C1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift */; };
 		3DE47F2F1E6C2DAA00DEB550 /* AbstractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F2E1E6C2DAA00DEB550 /* AbstractViewModel.swift */; };
 		3DE47F311E6C3B8F00DEB550 /* MVVMCocoa+SnackbarController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F301E6C3B8F00DEB550 /* MVVMCocoa+SnackbarController+Rx.swift */; };
 		3DE47F331E6C462400DEB550 /* MVVMCocoa+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F321E6C462400DEB550 /* MVVMCocoa+UIViewController.swift */; };
@@ -38,7 +41,6 @@
 		3DE47F411E6C4C8E00DEB550 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F401E6C4C8E00DEB550 /* BuildConfig.swift */; };
 		3DE47F431E6C4F4F00DEB550 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F421E6C4F4F00DEB550 /* Snack.swift */; };
 		3DE47F451E6C65A000DEB550 /* IconSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F441E6C65A000DEB550 /* IconSet.swift */; };
-		3DE47F471E6C65E500DEB550 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE47F461E6C65E500DEB550 /* Media.xcassets */; };
 		3DE47F491E6C66B300DEB550 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F481E6C66B300DEB550 /* Material.swift */; };
 		3DE47F4B1E6C75F500DEB550 /* MVVMCocoa+CoreDataDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F4A1E6C75F500DEB550 /* MVVMCocoa+CoreDataDefaultStorage.swift */; };
 		3DE47F4D1E6C770700DEB550 /* MVVMCocoa+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F4C1E6C770700DEB550 /* MVVMCocoa+Data.swift */; };
@@ -51,8 +53,8 @@
 		3DE47F5C1E6CA33E00DEB550 /* UsecaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F5B1E6CA33E00DEB550 /* UsecaseType.swift */; };
 		3DE47F5E1E6CA45300DEB550 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F5D1E6CA45300DEB550 /* AbstractViewController.swift */; };
 		3DE47F601E6CAF2900DEB550 /* AbstractPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F5F1E6CAF2900DEB550 /* AbstractPageViewController.swift */; };
-		3DE47F641E6CB16700DEB550 /* AbstractViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F631E6CB16700DEB550 /* AbstractViewHolder.swift */; };
-		3DEA3F891E6CB451004C0C6B /* AbstractAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA3F881E6CB451004C0C6B /* AbstractAdapter.swift */; };
+		3DE47F641E6CB16700DEB550 /* AbstractTableViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47F631E6CB16700DEB550 /* AbstractTableViewHolder.swift */; };
+		3DEA3F891E6CB451004C0C6B /* AbstractTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA3F881E6CB451004C0C6B /* AbstractTableAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +78,10 @@
 		3D7717831E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+NSObject.swift"; sourceTree = "<group>"; };
 		3D7717861E6B7E8C008FC20A /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		3D7717881E6B8077008FC20A /* ApplicationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationType.swift; sourceTree = "<group>"; };
-		3DE47F2C1E6C23F100DEB550 /* MVVMCocoa+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+Layout.swift"; sourceTree = "<group>"; };
+		3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerBindingObserver.swift; sourceTree = "<group>"; };
+		3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+DispatchQueue.swift"; sourceTree = "<group>"; };
+		3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCollectionAdapter.swift; sourceTree = "<group>"; };
+		3DCF0D8C1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCollectionViewHolder.swift; sourceTree = "<group>"; };
 		3DE47F2E1E6C2DAA00DEB550 /* AbstractViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewModel.swift; sourceTree = "<group>"; };
 		3DE47F301E6C3B8F00DEB550 /* MVVMCocoa+SnackbarController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+SnackbarController+Rx.swift"; sourceTree = "<group>"; };
 		3DE47F321E6C462400DEB550 /* MVVMCocoa+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+UIViewController.swift"; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		3DE47F401E6C4C8E00DEB550 /* BuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 		3DE47F421E6C4F4F00DEB550 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		3DE47F441E6C65A000DEB550 /* IconSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconSet.swift; sourceTree = "<group>"; };
-		3DE47F461E6C65E500DEB550 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		3DE47F481E6C66B300DEB550 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		3DE47F4A1E6C75F500DEB550 /* MVVMCocoa+CoreDataDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+CoreDataDefaultStorage.swift"; sourceTree = "<group>"; };
 		3DE47F4C1E6C770700DEB550 /* MVVMCocoa+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+Data.swift"; sourceTree = "<group>"; };
@@ -102,8 +106,8 @@
 		3DE47F5B1E6CA33E00DEB550 /* UsecaseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsecaseType.swift; sourceTree = "<group>"; };
 		3DE47F5D1E6CA45300DEB550 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		3DE47F5F1E6CAF2900DEB550 /* AbstractPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPageViewController.swift; sourceTree = "<group>"; };
-		3DE47F631E6CB16700DEB550 /* AbstractViewHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewHolder.swift; sourceTree = "<group>"; };
-		3DEA3F881E6CB451004C0C6B /* AbstractAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractAdapter.swift; sourceTree = "<group>"; };
+		3DE47F631E6CB16700DEB550 /* AbstractTableViewHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractTableViewHolder.swift; sourceTree = "<group>"; };
+		3DEA3F881E6CB451004C0C6B /* AbstractTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractTableAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +156,6 @@
 				3D7717761E6B6E6E008FC20A /* Types */,
 				3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */,
 				3D77175E1E6B6D8F008FC20A /* Info.plist */,
-				3DE47F461E6C65E500DEB550 /* Media.xcassets */,
 			);
 			path = MVVMCocoa;
 			sourceTree = "<group>";
@@ -195,8 +198,11 @@
 				3DE47F4E1E6C781900DEB550 /* DataStream.swift */,
 				3DE47F5D1E6CA45300DEB550 /* AbstractViewController.swift */,
 				3DE47F5F1E6CAF2900DEB550 /* AbstractPageViewController.swift */,
-				3DE47F631E6CB16700DEB550 /* AbstractViewHolder.swift */,
-				3DEA3F881E6CB451004C0C6B /* AbstractAdapter.swift */,
+				3DE47F631E6CB16700DEB550 /* AbstractTableViewHolder.swift */,
+				3DEA3F881E6CB451004C0C6B /* AbstractTableAdapter.swift */,
+				3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */,
+				3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */,
+				3DCF0D8C1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -205,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				3D7717831E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift */,
-				3DE47F2C1E6C23F100DEB550 /* MVVMCocoa+Layout.swift */,
 				3DE47F301E6C3B8F00DEB550 /* MVVMCocoa+SnackbarController+Rx.swift */,
 				3DE47F321E6C462400DEB550 /* MVVMCocoa+UIViewController.swift */,
 				3DE47F341E6C48C700DEB550 /* MVVMCocoa+UIView.swift */,
@@ -216,6 +221,7 @@
 				3DE47F4C1E6C770700DEB550 /* MVVMCocoa+Data.swift */,
 				3DE47F571E6C941100DEB550 /* MVVMCocoa+UserDefaults.swift */,
 				3DE47F591E6CA2F600DEB550 /* MVVMCocoa+Array.swift */,
+				3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -313,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE47F471E6C65E500DEB550 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,17 +330,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE47F601E6CAF2900DEB550 /* AbstractPageViewController.swift in Sources */,
+				3DCF0D8B1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift in Sources */,
 				3DE47F3F1E6C4AB400DEB550 /* HttpError.swift in Sources */,
 				3DE47F3D1E6C4A5900DEB550 /* MVVMCocoa+SessionManager.swift in Sources */,
 				3DE47F411E6C4C8E00DEB550 /* BuildConfig.swift in Sources */,
 				3DE47F311E6C3B8F00DEB550 /* MVVMCocoa+SnackbarController+Rx.swift in Sources */,
 				3DE47F541E6C8B2000DEB550 /* Checkbox.swift in Sources */,
 				3D77177A1E6B6EC0008FC20A /* ViewModelType.swift in Sources */,
-				3DE47F2D1E6C23F100DEB550 /* MVVMCocoa+Layout.swift in Sources */,
 				3DE47F5E1E6CA45300DEB550 /* AbstractViewController.swift in Sources */,
 				3DE47F521E6C78F300DEB550 /* CompoundButton.swift in Sources */,
+				3DCF0D871E6ECA1800A9D117 /* ControllerBindingObserver.swift in Sources */,
 				3DE47F491E6C66B300DEB550 /* Material.swift in Sources */,
-				3DE47F641E6CB16700DEB550 /* AbstractViewHolder.swift in Sources */,
+				3DE47F641E6CB16700DEB550 /* AbstractTableViewHolder.swift in Sources */,
 				3DE47F431E6C4F4F00DEB550 /* Snack.swift in Sources */,
 				3DE47F581E6C941100DEB550 /* MVVMCocoa+UserDefaults.swift in Sources */,
 				3D7717781E6B6E83008FC20A /* ViewType.swift in Sources */,
@@ -343,9 +349,10 @@
 				3DE47F351E6C48C700DEB550 /* MVVMCocoa+UIView.swift in Sources */,
 				3DE47F4F1E6C781900DEB550 /* DataStream.swift in Sources */,
 				3DE47F3B1E6C49E500DEB550 /* Regex.swift in Sources */,
+				3DCF0D891E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift in Sources */,
 				3DE47F451E6C65A000DEB550 /* IconSet.swift in Sources */,
 				3DE47F4B1E6C75F500DEB550 /* MVVMCocoa+CoreDataDefaultStorage.swift in Sources */,
-				3DEA3F891E6CB451004C0C6B /* AbstractAdapter.swift in Sources */,
+				3DEA3F891E6CB451004C0C6B /* AbstractTableAdapter.swift in Sources */,
 				3DE47F5A1E6CA2F600DEB550 /* MVVMCocoa+Array.swift in Sources */,
 				3D7717811E6B7C0E008FC20A /* BusManager.swift in Sources */,
 				3D77177E1E6B70B9008FC20A /* EventType.swift in Sources */,
@@ -356,6 +363,7 @@
 				3D77177C1E6B6F58008FC20A /* LogType.swift in Sources */,
 				3D7717891E6B8077008FC20A /* ApplicationType.swift in Sources */,
 				3D1D42881E6C04D300BA160C /* RxSchedulers.swift in Sources */,
+				3DCF0D8D1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift in Sources */,
 				3DE47F331E6C462400DEB550 /* MVVMCocoa+UIViewController.swift in Sources */,
 				3DE47F4D1E6C770700DEB550 /* MVVMCocoa+Data.swift in Sources */,
 				3DE47F391E6C49BF00DEB550 /* MVVMCocoa+String.swift in Sources */,

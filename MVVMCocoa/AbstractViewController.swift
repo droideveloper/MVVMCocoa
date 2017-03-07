@@ -13,14 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+import UIKit
+
 import Material
+
 import RxSwift
 import RxCocoa
 
 open class AbstractViewController<V>: UIViewController where V: ViewModelType {
 	
-	open var viewModel: ViewModelType?;
+	open var viewModel: V?;
+	
+	public var indicatorObserver: Any? {
+		get {
+			return self.activityIndicator.rx.isAnimating;
+		}
+	}
+	
+	public var snackbarObserver: Any? {
+		get {
+			return self.snackbarController?.rx.snackbarObserver;
+		}
+	}
+	
+	internal let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white);
 	
 	open override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated);
@@ -30,6 +46,11 @@ open class AbstractViewController<V>: UIViewController where V: ViewModelType {
 	open override func viewDidLoad() {
 		super.viewDidLoad();
 		self.prepare();
+		if let theme = applicationType {
+			self.activityIndicator.color = theme.colorAccent;
+		}
+		self.view.layout(activityIndicator)
+			.center();
 		self.viewModel?.viewDidLoad();
 	}
 	
@@ -47,11 +68,5 @@ open class AbstractViewController<V>: UIViewController where V: ViewModelType {
 		self.view.clipsToBounds = true
 		self.view.backgroundColor = .white
 		self.view.contentScaleFactor = Screen.scale
-	}
-	
-	open func bindSnackbarController() {
-		if let snackbarController = snackbarController {
-			self.viewModel?.bindSnackDataSource(observer: snackbarController.rx.notifySnackbar);
-		}
 	}
 }

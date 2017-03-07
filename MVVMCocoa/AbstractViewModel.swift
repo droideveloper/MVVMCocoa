@@ -22,8 +22,8 @@ import Material
 open class AbstractViewModel<V>: NSObject where V: ViewType {
 	
 	public let dispose = DisposeBag();
-	public let progressVisibilityDataSource = BehaviorSubject<Bool>(value: false);
-	public let snackDataSource = BehaviorSubject<Snack>(value: Snack.HIDDEN);
+	public let indicatorSource = BehaviorSubject<Bool>(value: false);
+	public let snackbarSource = BehaviorSubject<Snack>(value: Snack.HIDDEN);
 	
 	open weak var view: V?;
 	
@@ -31,8 +31,15 @@ open class AbstractViewModel<V>: NSObject where V: ViewType {
 		self.view = view;
 	}
 	
-	open func viewWilAppear(_ animated: Bool) -> Void {
-		// no-op
+	open func viewWillAppear(_ animated: Bool) -> Void {
+		if let view = view {
+			if let snackbarObserver = view.snackbarObserver as? ControllerBindingObserver<SnackbarController, Snack> {
+				bindSnackDataSource(observer: snackbarObserver);
+			}
+			if let indicatorObserver = view.indicatorObserver as? UIBindingObserver<UIActivityIndicatorView, Bool> {
+				bindProgressVisibilityDataSource(observer: indicatorObserver);
+			}
+		}
 	}
 	
 	open func viewDidLoad() -> Void {
@@ -47,13 +54,13 @@ open class AbstractViewModel<V>: NSObject where V: ViewType {
 		// no-op
 	}
 	
-	open func bindProgressVisibilityDataSource(observer: UIBindingObserver<UIActivityIndicatorView, Bool>) -> Void {
-		progressVisibilityDataSource.bindTo(observer)
+	func bindProgressVisibilityDataSource(observer: UIBindingObserver<UIActivityIndicatorView, Bool>) -> Void {
+		indicatorSource.bindTo(observer)
 			.disposed(by: dispose);
 	}
 	
-	open func bindSnackDataSource(observer: UIBindingObserver<SnackbarController, Snack>) -> Void {
-		snackDataSource.bindTo(observer)
+	func bindSnackDataSource(observer: ControllerBindingObserver<SnackbarController, Snack>) -> Void {
+		snackbarSource.bindTo(observer)
 			.disposed(by: dispose);
 	}
 }

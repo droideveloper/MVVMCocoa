@@ -20,27 +20,32 @@ import Material
 
 extension Reactive where Base: SnackbarController {
 	
-	public var notifySnackbar: UIBindingObserver<Base, Snack> {
-		return UIBindingObserver(UIElement: self.base) { (controller, value) in
-			switch value.state {
-				case .visible:
-					controller.snackbar.text = value.text;
-					if let actionText = value.actionText {
-						let flat = FlatButton(title: actionText);
-						flat.titleColor = controller.applicationType?.colorAccent;
-						if let tapObserver = value.tapObserver {
-							let dispose = DisposeBag();
-							flat.rx.tap.bindNext { _ in
-								self.notifySnackbar.on(.next(Snack.HIDDEN));
-								tapObserver.on(.next());
-							}.disposed(by: dispose);
-						}
+	public var snackbarObserver: ControllerBindingObserver<Base, Snack> {
+		return ControllerBindingObserver(ControllerElement: self.base) { (controller, snack, dispose) in
+			let state = snack.state;
+			switch state {
+			case .visible:
+				let snackbar = controller.snackbar;
+				snackbar.text = snack.text;
+				if let actionText = snack.actionText {
+					let buttonAction = FlatButton(title: actionText);
+					if let theme = controller.applicationType {
+						buttonAction.titleColor = theme.colorAccent;
 					}
-					_ = controller.animate(snackbar: .visible);
-					_ = controller.animate(snackbar: .hidden, delay: 5);
-				case .hidden:
-					controller.snackbar.layer.removeAllAnimations();
-					_ = controller.animate(snackbar: .hidden);
+					if let tapObserver = snack.tapObserver {
+						let tapSource = buttonAction.rx.tap;
+						tapSource.map { _ in
+							self.snackbarObserver.onNext(Snack.HIDDEN);
+						}.bindTo(tapObserver)
+						 .disposed(by: dispose);
+					}
+					snackbar.rightViews = [buttonAction];
+				}
+				_ = controller.animate(snackbar: state);
+				_ = controller.animate(snackbar: .hidden, delay: 3);
+			case .hidden:
+				controller.snackbar.layer.removeAllAnimations();
+				_ = controller.animate(snackbar: state);
 			}
 		};
 	}

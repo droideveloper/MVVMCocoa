@@ -28,7 +28,7 @@ extension NSObject {
 	public func log(level: LogLevel, message: String) -> Void {
 		if let logger = self as? LogType {
 			if logger.isLogEnabled() {
-				print("\(level)\(logger.getClassTag()): \(message)");
+				print("\(level.rawValue)\(logger.getClassTag()): \(message)");
 			}
 		}
 	}	

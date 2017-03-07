@@ -22,5 +22,5 @@ extension UIViewController {
 		get {
 			return UIApplication.shared.delegate as? ApplicationType;
 		}
-	}	
+	}
 }

@@ -19,6 +19,6 @@ import RxSwift
 public final class RxSchedulers {
 	
 	public static let io = ConcurrentDispatchQueueScheduler(queue: DispatchQueue(label: "Schedulers.io", attributes: .concurrent));
-	public static let mainThread = ConcurrentMainScheduler.instance;
+	public static let mainThread = MainScheduler.asyncInstance;
 	
 }

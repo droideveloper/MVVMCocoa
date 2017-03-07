@@ -18,12 +18,10 @@ import Material
 import RxSwift
 import RxCocoa
 
-public protocol ViewModelType: class {
+@objc public protocol ViewModelType {
 
 	func viewWillAppear(_ animated: Bool) -> Void;
 	func viewDidLoad() -> Void;
 	func viewWillDisappear(_ animated: Bool) -> Void;
 	func didReceiveMemoryWarning() -> Void;
-	func bindProgressVisibilityDataSource(observer: UIBindingObserver<UIActivityIndicatorView, Bool>) -> Void;
-	func bindSnackDataSource(observer: UIBindingObserver<SnackbarController, Snack>) -> Void;
 }

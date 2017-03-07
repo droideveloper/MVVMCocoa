@@ -14,4 +14,9 @@
  * limitations under the License.
  */
 
-public protocol ViewType: class {}
+import Material
+
+@objc public protocol ViewType {
+	var indicatorObserver: Any? { get }
+	var snackbarObserver:  Any? { get }
+}

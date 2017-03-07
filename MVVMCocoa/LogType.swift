@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-public protocol LogType: class {
+public protocol LogType {
 	
 	func isLogEnabled() -> Bool;
 	func getClassTag() -> String;

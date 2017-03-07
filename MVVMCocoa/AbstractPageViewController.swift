@@ -16,12 +16,27 @@
 import UIKit
 
 import Material
+
 import RxCocoa
 import RxSwift
 
 open class AbstractPageViewController<V>: UIPageViewController where V: ViewModelType {
 	
-	open var viewModel: ViewModelType?;
+	open var viewModel: V?;
+	
+	public var indicatorObserver: Any? {
+		get {
+			return self.activityIndicator.rx.isAnimating;
+		}
+	}
+	
+	public var snackbarObserver: Any? {
+		get {
+			return self.snackbarController?.rx.snackbarObserver;
+		}
+	}
+	
+	internal let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white);
 	
 	open override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated);
@@ -31,6 +46,11 @@ open class AbstractPageViewController<V>: UIPageViewController where V: ViewMode
 	open override func viewDidLoad() {
 		super.viewDidLoad();
 		self.prepare();
+		if let theme = applicationType {
+			self.activityIndicator.color = theme.colorAccent;
+		}
+		self.view.layout(activityIndicator)
+			.center();
 		self.viewModel?.viewDidLoad();
 	}
 	
@@ -48,11 +68,5 @@ open class AbstractPageViewController<V>: UIPageViewController where V: ViewMode
 		self.view.clipsToBounds = true
 		self.view.backgroundColor = .white
 		self.view.contentScaleFactor = Screen.scale
-	}
-	
-	open func bindSnackbarController() {
-		if let snackbarController = snackbarController {
-			self.viewModel?.bindSnackDataSource(observer: snackbarController.rx.notifySnackbar);
-		}
 	}
 }

@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import Material
 import Swinject
 
 public protocol ApplicationType: class {
 	
-	var colorPrimaryDark: Color { get }
-	var colorPrimary: Color { get }
-	var colorAccent: Color { get }
+	var colorPrimaryDark: UIColor { get }
+	var colorPrimary: UIColor { get }
+	var colorAccent: UIColor { get }
 	
 	var component: Container { get }
 }
