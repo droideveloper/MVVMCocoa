@@ -20,10 +20,8 @@ public final class BusManager {
 	
 	private static let rxBus = PublishSubject<EventType>();
 	
-	public static func register(closure: @escaping (EventType) -> Void) -> Disposable {
-		return rxBus.subscribeOn(RxSchedulers.io)
-			.observeOn(RxSchedulers.mainThread)
-			.subscribe(onNext: closure);
+	public static func register(_ onNext: @escaping (EventType) -> Void) -> Disposable {
+		return rxBus.subscribe(onNext: onNext);
 	}
 	
 	public static func unregister(dispose: Disposable?) -> Void {

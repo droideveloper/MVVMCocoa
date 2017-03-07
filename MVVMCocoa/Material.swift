@@ -16,7 +16,7 @@
  
 public final class Material: NSObject {
 	
-	public static let bundle: Bundle = {
+	fileprivate static let bundle: Bundle = {
 		let bundle = Bundle(for: Material.self);
 		if let url = bundle.resourceURL {
 			if let xBundle =  Bundle(url: url.appendingPathComponent("org.fs.MVVMCocoa.icons.bundle")) {
@@ -26,7 +26,7 @@ public final class Material: NSObject {
 		fatalError("can not find resources")
 	}();
 	
-	public static func icon(named: String) -> UIImage? {
+	fileprivate static func icon(named: String) -> UIImage? {
 		if let image = UIImage(named: named, in: bundle, compatibleWith: nil) {
 			return image.withRenderingMode(.alwaysTemplate);
 		}

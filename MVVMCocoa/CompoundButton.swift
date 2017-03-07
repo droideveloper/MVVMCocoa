@@ -22,10 +22,23 @@ open class CompoundButton: Button {
 	
 	let dispose = DisposeBag();
 	
+	var selectedObserver: UIBindingObserver<CompoundButton, Bool> {
+		get {
+			return rx.isSelected;
+		}
+	}
+	
+	var tapSource: ControlEvent<Void> {
+		get {
+			return rx.tap;
+		}
+	}
+	
 	open override func prepare() {
 		super.prepare();
-		rx.tap.subscribe(onNext: { [weak weakSelf = self] _ in
-			weakSelf?.isSelected = !(weakSelf?.isSelected ?? false);
-		}).disposed(by: dispose);
+		tapSource
+			.map({ [unowned self] _ in !self.isSelected })
+			.bindTo(selectedObserver)
+			.disposed(by: dispose);
 	}	
 }

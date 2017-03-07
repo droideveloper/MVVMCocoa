@@ -14,7 +14,6 @@
  * limitations under the License.
  */
  
-
 open class Checkbox: CompoundButton {
 	
 	open override func prepare() {

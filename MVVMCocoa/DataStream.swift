@@ -40,4 +40,34 @@ public class DataStream {
 			self.position = to;
 		}
 	}
+	
+	public func write(url: URL, callback: @escaping (Int64, Int64) -> Void) throws {
+		if url.exists {
+			if let handle = try? FileHandle(forWritingTo: url) {
+				handle.seekToEndOfFile();
+				var index = 8192;
+				while let buffer = read() {
+					handle.write(buffer);
+					index += buffer.count;
+					callback(Int64(index), Int64(stream.count));
+				}
+				handle.closeFile();
+			}
+		} else {
+			if let buffer = read() {
+				try buffer.write(to: url);
+				callback(Int64(8192), Int64(stream.count));
+				try write(url: url, callback: callback);
+			}
+		}
+	}
+}
+
+extension URL {
+	var exists: Bool {
+		get {
+			let manager = FileManager.default;
+			return manager.fileExists(atPath: self.path);
+		}
+	}
 }

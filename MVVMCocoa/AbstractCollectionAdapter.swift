@@ -20,17 +20,20 @@ import Material
 import RxCocoa
 import RxSwift
 
-open class AbstractCollectionAdapter<D>: NSObject, UICollectionViewDataSource {
+open class AbstractCollectionAdapter<D>: NSObject, CollectionViewDataSource {
 
+	public private (set) var dataSourceItems: [DataSourceItem];
+	
 	public var dispose = DisposeBag();
 	public let dataSource = BehaviorSubject<[D]>(value: []);
 	
 	var dataSize: Int;
 	var dataSet: [D];
 	
-	public init(dataSize: Int = 0, dataSet: [D] = []) {
+	public init(dataSize: Int = 0, dataSet: [D] = [], dataSourceItems: [DataSourceItem] = []) {
 		self.dataSize = dataSize;
 		self.dataSet = dataSet;
+		self.dataSourceItems = dataSourceItems;
 	}
 	
 	open func bindDataSource(observable: Observable<[D]>, callback: (() ->Void)?) {
@@ -40,6 +43,7 @@ open class AbstractCollectionAdapter<D>: NSObject, UICollectionViewDataSource {
 				if data.count != self.dataSize {
 					self.dataSize = data.count;
 					self.dataSet = data;
+					self.dataSourceItems = self.dataSet.map({ item in self.dataSourceItem(for: item) });
 					if let callback = callback {
 						callback();
 					}
@@ -71,6 +75,10 @@ open class AbstractCollectionAdapter<D>: NSObject, UICollectionViewDataSource {
 	
 	open func identifierAt(index: Int) -> String {
 		return "kUnknownIdentifier";
+	}
+	
+	open func dataSourceItem(for item: D) -> DataSourceItem {
+		return DataSourceItem(data: item, width: 0, height: 0);
 	}
 	
 	open func bind(viewHolder: AbstractCollectionViewHolder<D>, item: Observable<D>) {

@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D1D42881E6C04D300BA160C /* RxSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D42871E6C04D300BA160C /* RxSchedulers.swift */; };
 		3D77175F1E6B6D8F008FC20A /* MVVMCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D77176E1E6B6DF3008FC20A /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7717661E6B6DF3008FC20A /* Swinject.framework */; };
-		3D77176F1E6B6DF3008FC20A /* SugarRecordCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7717671E6B6DF3008FC20A /* SugarRecordCoreData.framework */; };
-		3D7717701E6B6DF3008FC20A /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7717681E6B6DF3008FC20A /* Material.framework */; };
-		3D7717711E6B6DF3008FC20A /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7717691E6B6DF3008FC20A /* ObjectMapper.framework */; };
-		3D7717721E6B6DF3008FC20A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D77176A1E6B6DF3008FC20A /* AlamofireImage.framework */; };
-		3D7717731E6B6DF3008FC20A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D77176B1E6B6DF3008FC20A /* Alamofire.framework */; };
-		3D7717741E6B6DF3008FC20A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D77176C1E6B6DF3008FC20A /* RxSwift.framework */; };
-		3D7717751E6B6DF3008FC20A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D77176D1E6B6DF3008FC20A /* RxCocoa.framework */; };
 		3D7717781E6B6E83008FC20A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717771E6B6E83008FC20A /* ViewType.swift */; };
 		3D77177A1E6B6EC0008FC20A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717791E6B6EC0008FC20A /* ViewModelType.swift */; };
 		3D77177C1E6B6F58008FC20A /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77177B1E6B6F58008FC20A /* LogType.swift */; };
@@ -25,6 +17,14 @@
 		3D7717841E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717831E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift */; };
 		3D7717871E6B7E8C008FC20A /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717861E6B7E8C008FC20A /* LogLevel.swift */; };
 		3D7717891E6B8077008FC20A /* ApplicationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717881E6B8077008FC20A /* ApplicationType.swift */; };
+		3D8525821E6F03F900F30330 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257A1E6F03F900F30330 /* Alamofire.framework */; };
+		3D8525831E6F03F900F30330 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257B1E6F03F900F30330 /* AlamofireImage.framework */; };
+		3D8525841E6F03F900F30330 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257C1E6F03F900F30330 /* Material.framework */; };
+		3D8525851E6F03F900F30330 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257D1E6F03F900F30330 /* ObjectMapper.framework */; };
+		3D8525861E6F03F900F30330 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257E1E6F03F900F30330 /* RxCocoa.framework */; };
+		3D8525871E6F03F900F30330 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85257F1E6F03F900F30330 /* RxSwift.framework */; };
+		3D8525881E6F03F900F30330 /* SugarRecordCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8525801E6F03F900F30330 /* SugarRecordCoreData.framework */; };
+		3D8525891E6F03F900F30330 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8525811E6F03F900F30330 /* Swinject.framework */; };
 		3DCF0D871E6ECA1800A9D117 /* ControllerBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */; };
 		3DCF0D891E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */; };
 		3DCF0D8B1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */; };
@@ -62,14 +62,6 @@
 		3D77175A1E6B6D8F008FC20A /* MVVMCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVVMCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMCocoa.h; sourceTree = "<group>"; };
 		3D77175E1E6B6D8F008FC20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D7717661E6B6DF3008FC20A /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../../Frameworks/Swinject.framework; sourceTree = "<group>"; };
-		3D7717671E6B6DF3008FC20A /* SugarRecordCoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SugarRecordCoreData.framework; path = ../../Frameworks/SugarRecordCoreData.framework; sourceTree = "<group>"; };
-		3D7717681E6B6DF3008FC20A /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = ../../Frameworks/Material.framework; sourceTree = "<group>"; };
-		3D7717691E6B6DF3008FC20A /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Frameworks/ObjectMapper.framework; sourceTree = "<group>"; };
-		3D77176A1E6B6DF3008FC20A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = ../../Frameworks/AlamofireImage.framework; sourceTree = "<group>"; };
-		3D77176B1E6B6DF3008FC20A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Frameworks/Alamofire.framework; sourceTree = "<group>"; };
-		3D77176C1E6B6DF3008FC20A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Frameworks/RxSwift.framework; sourceTree = "<group>"; };
-		3D77176D1E6B6DF3008FC20A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../Frameworks/RxCocoa.framework; sourceTree = "<group>"; };
 		3D7717771E6B6E83008FC20A /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		3D7717791E6B6EC0008FC20A /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		3D77177B1E6B6F58008FC20A /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
@@ -78,6 +70,14 @@
 		3D7717831E6B7DF2008FC20A /* MVVMCocoa+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+NSObject.swift"; sourceTree = "<group>"; };
 		3D7717861E6B7E8C008FC20A /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		3D7717881E6B8077008FC20A /* ApplicationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationType.swift; sourceTree = "<group>"; };
+		3D85257A1E6F03F900F30330 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Frameworks/Alamofire.framework; sourceTree = "<group>"; };
+		3D85257B1E6F03F900F30330 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = ../Frameworks/AlamofireImage.framework; sourceTree = "<group>"; };
+		3D85257C1E6F03F900F30330 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = ../Frameworks/Material.framework; sourceTree = "<group>"; };
+		3D85257D1E6F03F900F30330 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Frameworks/ObjectMapper.framework; sourceTree = "<group>"; };
+		3D85257E1E6F03F900F30330 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Frameworks/RxCocoa.framework; sourceTree = "<group>"; };
+		3D85257F1E6F03F900F30330 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Frameworks/RxSwift.framework; sourceTree = "<group>"; };
+		3D8525801E6F03F900F30330 /* SugarRecordCoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SugarRecordCoreData.framework; path = ../Frameworks/SugarRecordCoreData.framework; sourceTree = "<group>"; };
+		3D8525811E6F03F900F30330 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Frameworks/Swinject.framework; sourceTree = "<group>"; };
 		3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerBindingObserver.swift; sourceTree = "<group>"; };
 		3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+DispatchQueue.swift"; sourceTree = "<group>"; };
 		3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCollectionAdapter.swift; sourceTree = "<group>"; };
@@ -115,14 +115,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D77176E1E6B6DF3008FC20A /* Swinject.framework in Frameworks */,
-				3D77176F1E6B6DF3008FC20A /* SugarRecordCoreData.framework in Frameworks */,
-				3D7717701E6B6DF3008FC20A /* Material.framework in Frameworks */,
-				3D7717711E6B6DF3008FC20A /* ObjectMapper.framework in Frameworks */,
-				3D7717721E6B6DF3008FC20A /* AlamofireImage.framework in Frameworks */,
-				3D7717731E6B6DF3008FC20A /* Alamofire.framework in Frameworks */,
-				3D7717741E6B6DF3008FC20A /* RxSwift.framework in Frameworks */,
-				3D7717751E6B6DF3008FC20A /* RxCocoa.framework in Frameworks */,
+				3D8525821E6F03F900F30330 /* Alamofire.framework in Frameworks */,
+				3D8525831E6F03F900F30330 /* AlamofireImage.framework in Frameworks */,
+				3D8525841E6F03F900F30330 /* Material.framework in Frameworks */,
+				3D8525851E6F03F900F30330 /* ObjectMapper.framework in Frameworks */,
+				3D8525861E6F03F900F30330 /* RxCocoa.framework in Frameworks */,
+				3D8525871E6F03F900F30330 /* RxSwift.framework in Frameworks */,
+				3D8525881E6F03F900F30330 /* SugarRecordCoreData.framework in Frameworks */,
+				3D8525891E6F03F900F30330 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,14 +163,14 @@
 		3D7717651E6B6DF3008FC20A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D7717661E6B6DF3008FC20A /* Swinject.framework */,
-				3D7717671E6B6DF3008FC20A /* SugarRecordCoreData.framework */,
-				3D7717681E6B6DF3008FC20A /* Material.framework */,
-				3D7717691E6B6DF3008FC20A /* ObjectMapper.framework */,
-				3D77176A1E6B6DF3008FC20A /* AlamofireImage.framework */,
-				3D77176B1E6B6DF3008FC20A /* Alamofire.framework */,
-				3D77176C1E6B6DF3008FC20A /* RxSwift.framework */,
-				3D77176D1E6B6DF3008FC20A /* RxCocoa.framework */,
+				3D85257A1E6F03F900F30330 /* Alamofire.framework */,
+				3D85257B1E6F03F900F30330 /* AlamofireImage.framework */,
+				3D85257C1E6F03F900F30330 /* Material.framework */,
+				3D85257D1E6F03F900F30330 /* ObjectMapper.framework */,
+				3D85257E1E6F03F900F30330 /* RxCocoa.framework */,
+				3D85257F1E6F03F900F30330 /* RxSwift.framework */,
+				3D8525801E6F03F900F30330 /* SugarRecordCoreData.framework */,
+				3D8525811E6F03F900F30330 /* Swinject.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
