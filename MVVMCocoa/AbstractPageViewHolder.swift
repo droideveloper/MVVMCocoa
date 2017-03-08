@@ -13,28 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-public final class Material: NSObject {
+
+import UIKit
+
+import Material
+import RxCocoa
+import RxSwift
+
+open class AbstractPageViewHolder<D>: UIViewController {
 	
-	fileprivate static let bundle: Bundle = {
-		let bundle = Bundle(for: CompoundButton.self);
-		if let url = bundle.resourceURL {
-			let x =  Bundle(url: url.appendingPathComponent("org.fs.mvvmcocoa.icons.bundle"))
-			if let b = x {
-				return b;
-			}
-		}
-		return bundle;
-	}();
+	open var position: Int;
+	open var item: D;
 	
-	fileprivate static func icon(named: String) -> UIImage? {
-		if let image = UIImage(named: named, in: bundle, compatibleWith: nil) {
-			return image.withRenderingMode(.alwaysTemplate);
-		}
-		return nil;
+	public init(position: Int = 0, item: D) {
+		self.position = position;
+		self.item = item;
+		super.init(nibName: nil, bundle: nil);
 	}
-	
-	public static func icon(iconSet: IconSet) -> UIImage? {
-		return icon(named: "\(iconSet)");
+
+	required public init?(coder aDecoder: NSCoder) {
+		fatalError("you can not initialize this via storyboard");
 	}
 }

@@ -15,12 +15,13 @@
  */
  
 import UIKit
+import Material
 
 extension UIViewController {
 	
 	public var applicationType: ApplicationType? {
 		get {
-			return UIApplication.shared.delegate as? ApplicationType;
+			return Application.shared;
 		}
 	}
 }

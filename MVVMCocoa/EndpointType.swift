@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import RxSwift
+import Alamofire
 
-public protocol UsecaseType: class {
+public protocol EndpointType: class {
 	
-	associatedtype D;
-	
-	func async() -> Observable<D>;
-	
+	var baseURL: String { get }
+	var request: (HTTPMethod, URLConvertible) { get }
 }

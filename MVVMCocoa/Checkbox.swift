@@ -18,15 +18,16 @@ open class Checkbox: CompoundButton {
 	
 	open override func prepare() {
 		super.prepare();
-		setImage(Material.icon(iconSet: .ic_check_box_outline_blank), for: .normal);
-		setImage(tintImageColor(image: Material.icon(iconSet: .ic_check_box)), for: .selected);
+		prepareCheckbox();
 	}
 	
-	func tintImageColor(image: UIImage?) -> UIImage? {
-		if let theme = UIApplication.shared.delegate as? ApplicationType {
-			setTitleColor(theme.colorAccent, for: .selected);
-			return image?.tint(with: theme.colorAccent);
+	func prepareCheckbox() {
+		setImage(icon(named: .ic_check_box_outline_blank), for: .normal);
+		var image = icon(named: .ic_check_box);
+		if let colorAccent = colorAccent() {
+			image = image?.tint(with: colorAccent);
+			setTitleColor(colorAccent, for: .selected);
 		}
-		return image;
+		setImage(image, for: .selected);
 	}
 }

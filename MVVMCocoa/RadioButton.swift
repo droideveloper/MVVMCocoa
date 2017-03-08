@@ -18,15 +18,16 @@ open class RadioButton: CompoundButton {
 	
 	open override func prepare() {
 		super.prepare();
-		setImage(Material.icon(iconSet: .ic_radio_button_unchecked), for: .normal);
-		setImage(tintImageColor(image: Material.icon(iconSet: .ic_radio_button_checked)), for: .selected);
+		prepareRadioButton();
 	}
 	
-	func tintImageColor(image: UIImage?) -> UIImage? {
-		if let theme = UIApplication.shared.delegate as? ApplicationType {
-			setTitleColor(theme.colorAccent, for: .selected);
-			return image?.tint(with: theme.colorAccent);
+	func prepareRadioButton() {
+		setImage(icon(named: .ic_radio_button_unchecked), for: .normal);
+		var image = icon(named: .ic_radio_button_checked);
+		if let colorAccent = colorAccent() {
+			image = image?.tint(with: colorAccent);
+			setTitleColor(colorAccent, for: .selected);
 		}
-		return image;
+		setImage(image, for: .selected);
 	}
 }

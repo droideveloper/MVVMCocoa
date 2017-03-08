@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D111C9A1E6F74D2001794ED /* MVVMCocoa+Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D111C991E6F74D2001794ED /* MVVMCocoa+Application.swift */; };
+		3D111C9C1E6F7995001794ED /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D111C9B1E6F7995001794ED /* Media.xcassets */; };
 		3D1D42881E6C04D300BA160C /* RxSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D42871E6C04D300BA160C /* RxSchedulers.swift */; };
+		3D60AAE51E6F3D9B00F317AF /* AbstractPageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60AAE41E6F3D9B00F317AF /* AbstractPageAdapter.swift */; };
+		3D60AAE71E6F482C00F317AF /* AbstractPageViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60AAE61E6F482C00F317AF /* AbstractPageViewHolder.swift */; };
+		3D60AAE91E6F595E00F317AF /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60AAE81E6F595E00F317AF /* EndpointType.swift */; };
 		3D77175F1E6B6D8F008FC20A /* MVVMCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D7717781E6B6E83008FC20A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717771E6B6E83008FC20A /* ViewType.swift */; };
 		3D77177A1E6B6EC0008FC20A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7717791E6B6EC0008FC20A /* ViewModelType.swift */; };
@@ -58,7 +63,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D111C991E6F74D2001794ED /* MVVMCocoa+Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVVMCocoa+Application.swift"; sourceTree = "<group>"; };
+		3D111C9B1E6F7995001794ED /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		3D1D42871E6C04D300BA160C /* RxSchedulers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSchedulers.swift; sourceTree = "<group>"; };
+		3D60AAE41E6F3D9B00F317AF /* AbstractPageAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPageAdapter.swift; sourceTree = "<group>"; };
+		3D60AAE61E6F482C00F317AF /* AbstractPageViewHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPageViewHolder.swift; sourceTree = "<group>"; };
+		3D60AAE81E6F595E00F317AF /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		3D77175A1E6B6D8F008FC20A /* MVVMCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVVMCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMCocoa.h; sourceTree = "<group>"; };
 		3D77175E1E6B6D8F008FC20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +166,7 @@
 				3D7717761E6B6E6E008FC20A /* Types */,
 				3D77175D1E6B6D8F008FC20A /* MVVMCocoa.h */,
 				3D77175E1E6B6D8F008FC20A /* Info.plist */,
+				3D111C9B1E6F7995001794ED /* Media.xcassets */,
 			);
 			path = MVVMCocoa;
 			sourceTree = "<group>";
@@ -184,6 +195,7 @@
 				3D77177D1E6B70B9008FC20A /* EventType.swift */,
 				3D7717881E6B8077008FC20A /* ApplicationType.swift */,
 				3DE47F5B1E6CA33E00DEB550 /* UsecaseType.swift */,
+				3D60AAE81E6F595E00F317AF /* EndpointType.swift */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -203,6 +215,8 @@
 				3DCF0D861E6ECA1800A9D117 /* ControllerBindingObserver.swift */,
 				3DCF0D8A1E6EDD5A00A9D117 /* AbstractCollectionAdapter.swift */,
 				3DCF0D8C1E6EDE0300A9D117 /* AbstractCollectionViewHolder.swift */,
+				3D60AAE41E6F3D9B00F317AF /* AbstractPageAdapter.swift */,
+				3D60AAE61E6F482C00F317AF /* AbstractPageViewHolder.swift */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 				3DE47F571E6C941100DEB550 /* MVVMCocoa+UserDefaults.swift */,
 				3DE47F591E6CA2F600DEB550 /* MVVMCocoa+Array.swift */,
 				3DCF0D881E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift */,
+				3D111C991E6F74D2001794ED /* MVVMCocoa+Application.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D111C9C1E6F7995001794ED /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,18 +354,22 @@
 				3DE47F541E6C8B2000DEB550 /* Checkbox.swift in Sources */,
 				3D77177A1E6B6EC0008FC20A /* ViewModelType.swift in Sources */,
 				3DE47F5E1E6CA45300DEB550 /* AbstractViewController.swift in Sources */,
+				3D60AAE51E6F3D9B00F317AF /* AbstractPageAdapter.swift in Sources */,
 				3DE47F521E6C78F300DEB550 /* CompoundButton.swift in Sources */,
 				3DCF0D871E6ECA1800A9D117 /* ControllerBindingObserver.swift in Sources */,
 				3DE47F491E6C66B300DEB550 /* Material.swift in Sources */,
 				3DE47F641E6CB16700DEB550 /* AbstractTableViewHolder.swift in Sources */,
+				3D60AAE91E6F595E00F317AF /* EndpointType.swift in Sources */,
 				3DE47F431E6C4F4F00DEB550 /* Snack.swift in Sources */,
 				3DE47F581E6C941100DEB550 /* MVVMCocoa+UserDefaults.swift in Sources */,
 				3D7717781E6B6E83008FC20A /* ViewType.swift in Sources */,
+				3D111C9A1E6F74D2001794ED /* MVVMCocoa+Application.swift in Sources */,
 				3DE47F371E6C495400DEB550 /* MVVMCocoa+UIColor.swift in Sources */,
 				3DE47F351E6C48C700DEB550 /* MVVMCocoa+UIView.swift in Sources */,
 				3DE47F4F1E6C781900DEB550 /* DataStream.swift in Sources */,
 				3DE47F3B1E6C49E500DEB550 /* Regex.swift in Sources */,
 				3DCF0D891E6ED21100A9D117 /* MVVMCocoa+DispatchQueue.swift in Sources */,
+				3D60AAE71E6F482C00F317AF /* AbstractPageViewHolder.swift in Sources */,
 				3DE47F451E6C65A000DEB550 /* IconSet.swift in Sources */,
 				3DE47F4B1E6C75F500DEB550 /* MVVMCocoa+CoreDataDefaultStorage.swift in Sources */,
 				3DEA3F891E6CB451004C0C6B /* AbstractTableAdapter.swift in Sources */,
@@ -378,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -399,6 +420,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -415,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -431,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -452,6 +475,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -462,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -476,18 +500,20 @@
 		3D7717631E6B6D8F008FC20A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSET_PACK_MANIFEST_URL_PREFIX = icons.bundle;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Users/Fatih/ios/Frameworks/**";
 				INFOPLIST_FILE = MVVMCocoa/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.fs.MVVMCocoa;
+				PRODUCT_BUNDLE_IDENTIFIER = org.fs.mvvmcocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -499,18 +525,20 @@
 		3D7717641E6B6D8F008FC20A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSET_PACK_MANIFEST_URL_PREFIX = icons.bundle;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Users/Fatih/ios/Frameworks/**";
 				INFOPLIST_FILE = MVVMCocoa/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.fs.MVVMCocoa;
+				PRODUCT_BUNDLE_IDENTIFIER = org.fs.mvvmcocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

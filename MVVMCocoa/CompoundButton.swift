@@ -20,7 +20,7 @@ import RxCocoa
 
 open class CompoundButton: Button {
 	
-	let dispose = DisposeBag();
+	public let dispose = DisposeBag();
 	
 	var selectedObserver: UIBindingObserver<CompoundButton, Bool> {
 		get {
@@ -36,9 +36,18 @@ open class CompoundButton: Button {
 	
 	open override func prepare() {
 		super.prepare();
+		pulseAnimation = .none;
 		tapSource
 			.map({ [unowned self] _ in !self.isSelected })
 			.bindTo(selectedObserver)
 			.disposed(by: dispose);
-	}	
+	}
+	
+	public func colorAccent() -> UIColor? {
+		return Application.shared?.colorAccent;
+	}
+	
+	public func icon(named: IconSet) -> UIImage? {
+		return Material.icon(iconSet: named);
+	}
 }
