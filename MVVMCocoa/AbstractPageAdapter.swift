@@ -26,23 +26,18 @@ open class AbstractPageAdapter<D>: NSObject, UIPageViewControllerDataSource {
 	public var dispose = DisposeBag();
 	public let dataSource = BehaviorSubject<[D]>(value: []);
 	
-	var dataSet: [D];
-	var dataSize: Int;
+	public var dataSet: [D];
 	
-	public init(dataSize: Int = 0, dataSet: [D] = []) {
+	public init(dataSet: [D] = []) {
 		self.dataSet = dataSet;
-		self.dataSize = dataSize;
 	}
 	
 	open func bindDataSource(observable: Observable<[D]>, callback: (() -> Void)?) {
 		dataSource
 			.bindNext({ data in
-				if self.dataSize != data.count {
-					self.dataSet = data;
-					self.dataSize = data.count;
-					if let callback = callback {
-						callback();
-					}
+				self.dataSet = data;
+				if let callback = callback {
+					callback();
 				}
 			}).disposed(by: dispose);
 		
@@ -64,7 +59,7 @@ open class AbstractPageAdapter<D>: NSObject, UIPageViewControllerDataSource {
 	public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 		if let contentView = viewController as? AbstractPageViewHolder<D> {
 			let index = contentView.position;
-			if index < (dataSize - 1) {
+			if index < (dataCount() - 1) {
 				return viewControllerAt(index: (index + 1));
 			}
 		}
@@ -72,7 +67,11 @@ open class AbstractPageAdapter<D>: NSObject, UIPageViewControllerDataSource {
 	}
 	
 	open func presentationCount(for pageViewController: UIPageViewController) -> Int {
-		return dataSize;
+		return dataCount();
+	}
+	
+	open func dataCount() -> Int {
+		return dataSet.count;
 	}
 	
 	open func itemAt(index: Int) -> D {

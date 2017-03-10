@@ -37,7 +37,7 @@ open class AbstractPageViewController<V>: UIPageViewController where V: ViewMode
 	}
 	
 	internal let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white);
-	
+		
 	open override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated);
 		self.viewModel?.viewWillAppear(animated);

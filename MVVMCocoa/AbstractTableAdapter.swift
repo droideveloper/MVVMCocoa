@@ -25,11 +25,9 @@ open class AbstractTableAdapter<D>: NSObject, UITableViewDataSource {
 	public var dispose = DisposeBag();
 	public let dataSource = BehaviorSubject<[D]>(value: []);
 	
-	var dataSize: Int;
-	var dataSet: [D];
+	public var dataSet: [D];
 	
-	public init(dataSize: Int = 0, dataSet: [D] = []) {
-		self.dataSize = dataSize;
+	public init(dataSet: [D] = []) {
 		self.dataSet = dataSet;
 	}
 	
@@ -37,12 +35,9 @@ open class AbstractTableAdapter<D>: NSObject, UITableViewDataSource {
 		// register for change
 		dataSource
 			.bindNext({ data in
-				if data.count != self.dataSize {
-					self.dataSize = data.count;
-					self.dataSet = data;
-					if let callback = callback {
-						callback();
-					}
+				self.dataSet = data;
+				if let callback = callback {
+					callback();
 				}
 			}).disposed(by: dispose);
 		// this observer binded with threads since it will be coming through network
@@ -52,17 +47,21 @@ open class AbstractTableAdapter<D>: NSObject, UITableViewDataSource {
 	}
 	
 	open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.dataSize;
+		return dataCount();
 	}
 	
 	open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let key = identifierAt(index: indexPath.row);
+		let item = itemAt(index: indexPath.row);
 		let view = tableView.dequeueReusableCell(withIdentifier: key, for: indexPath);
 		if let viewHolder = view as? AbstractTableViewHolder<D> {
-			let item = itemAt(index: indexPath.row);
 			bind(viewHolder: viewHolder, item: item);
 		}
 		return view;
+	}
+	
+	open func dataCount() -> Int {
+		return dataSet.count;
 	}
 	
 	open func itemAt(index: Int) -> Observable<D> {

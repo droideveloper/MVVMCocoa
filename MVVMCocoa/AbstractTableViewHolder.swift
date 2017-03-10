@@ -21,12 +21,14 @@ import RxCocoa
 
 open class AbstractTableViewHolder<T>: TableViewCell {
 	
-	public let dispose = DisposeBag();
-	public let itemDataSource = PublishSubject<T>();
+	public var dispose = DisposeBag();
 	
-	public func bindItemDataSource(observable: Observable<T>) {
-		observable
-			.bindTo(itemDataSource)
-			.disposed(by: dispose);
+	open func bindItemDataSource(observable: Observable<T>) {
+		fatalError("you should implement bindItemDataSource and not call super");
+	}
+	
+	open override func prepareForReuse() {
+		super.prepareForReuse();
+		dispose = DisposeBag();
 	}
 }

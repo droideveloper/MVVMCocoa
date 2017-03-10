@@ -27,11 +27,9 @@ open class AbstractCollectionAdapter<D>: NSObject, CollectionViewDataSource {
 	public var dispose = DisposeBag();
 	public let dataSource = BehaviorSubject<[D]>(value: []);
 	
-	var dataSize: Int;
-	var dataSet: [D];
+	public var dataSet: [D];
 	
-	public init(dataSize: Int = 0, dataSet: [D] = [], dataSourceItems: [DataSourceItem] = []) {
-		self.dataSize = dataSize;
+	public init(dataSet: [D] = [], dataSourceItems: [DataSourceItem] = []) {
 		self.dataSet = dataSet;
 		self.dataSourceItems = dataSourceItems;
 	}
@@ -40,13 +38,10 @@ open class AbstractCollectionAdapter<D>: NSObject, CollectionViewDataSource {
 		// register for change
 		dataSource
 			.bindNext({ data in
-				if data.count != self.dataSize {
-					self.dataSize = data.count;
-					self.dataSet = data;
-					self.dataSourceItems = self.dataSet.map({ item in self.dataSourceItem(for: item) });
-					if let callback = callback {
-						callback();
-					}
+				self.dataSet = data;
+				self.dataSourceItems = self.dataSet.map({ item in self.dataSourceItem(for: item) });
+				if let callback = callback {
+					callback();
 				}
 			}).disposed(by: dispose);
 		// this observer binded with threads since it will be coming through network
@@ -56,17 +51,21 @@ open class AbstractCollectionAdapter<D>: NSObject, CollectionViewDataSource {
 	}
 	
 	open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return dataSize;
+		return dataCount();
 	}
 	
 	open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let identifier = identifierAt(index: indexPath.row);
+		let item = itemAt(index: indexPath.row);
 		let view = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath);
 		if let viewHolder = view as? AbstractCollectionViewHolder<D> {
-			let item = itemAt(index: indexPath.row);
 			bind(viewHolder: viewHolder, item: item);
-		}
+		} 
 		return view;
+	}
+	
+	open func dataCount() -> Int {
+		return dataSet.count;
 	}
 	
 	open func itemAt(index: Int) -> Observable<D> {
