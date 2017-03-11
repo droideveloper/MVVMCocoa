@@ -24,18 +24,18 @@ public final class Snack {
 	
 	public var text: String?;
 	public var actionText: String?
-	public var tapObserver: BehaviorSubject<Void>?;
+	public var tapObserver: PublishSubject<Void>?;
 	
 	public var state: SnackbarStatus;
 	
-	public init(state: SnackbarStatus, text: String? = nil, actionText: String? = nil, tapObserver: BehaviorSubject<Void>? = nil) {
+	public init(state: SnackbarStatus, text: String? = nil, actionText: String? = nil, tapObserver: PublishSubject<Void>? = nil) {
 		self.state = state;
 		self.text = text;
 		self.actionText = actionText;
 		self.tapObserver = tapObserver;
 	}
 	
-	public func show(text: String? = nil, actionText: String? = nil, tapObserver: BehaviorSubject<Void>? = nil) -> Snack {
+	public static func show(text: String? = nil, actionText: String? = nil, tapObserver: PublishSubject<Void>? = nil) -> Snack {
 		return Snack(state: .visible, text: text, actionText: actionText, tapObserver: tapObserver);
 	}
 }

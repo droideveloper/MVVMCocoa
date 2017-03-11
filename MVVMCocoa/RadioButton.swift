@@ -22,7 +22,9 @@ open class RadioButton: CompoundButton {
 	}
 	
 	func prepareRadioButton() {
-		setImage(icon(named: .ic_radio_button_unchecked), for: .normal);
+		var normal = icon(named: .ic_radio_button_unchecked);
+		normal = normal?.tint(with: .black);
+		setImage(normal, for: .normal);
 		var image = icon(named: .ic_radio_button_checked);
 		if let colorAccent = colorAccent() {
 			image = image?.tint(with: colorAccent);

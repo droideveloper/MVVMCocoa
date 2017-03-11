@@ -22,7 +22,9 @@ open class Checkbox: CompoundButton {
 	}
 	
 	func prepareCheckbox() {
-		setImage(icon(named: .ic_check_box_outline_blank), for: .normal);
+		var normal = icon(named: .ic_check_box_outline_blank);
+		normal = normal?.tint(with: .black);
+		setImage(normal, for: .normal);
 		var image = icon(named: .ic_check_box);
 		if let colorAccent = colorAccent() {
 			image = image?.tint(with: colorAccent);
