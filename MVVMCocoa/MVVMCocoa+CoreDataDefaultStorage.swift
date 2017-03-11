@@ -59,6 +59,7 @@ extension Reactive where Base: CoreDataDefaultStorage {
 	public func create<T: Entity>(_ create: @escaping (Context) throws -> T) -> Observable<T> {
 		return operation { (context, save) in
 			let o: T = try create(context);
+			try context.insert(o);
 			save();
 			return o;
 		};
